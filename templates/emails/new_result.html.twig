@@ -1,0 +1,51 @@
+{% apply inky_to_html|inline_css(source('@styles/foundation-emails.css'), source('@styles/email.css')) %}
+    {# Todo: Localisation for email. Store user locale ? #}
+    {# @var search \MyDigitalEnvironment\AlertsBundle\Entity\Search #}
+    <container>
+        <row>
+            <columns>
+                <h2>
+                    New result for search <strong>{% if search.name is not null %}"{{ search.name }}"{% endif %}</strong>
+                </h2>
+                <p>
+                    Hello {{ subscriber.fullName }}, we found {{ newResultCount }} new result for your search: {{ search.description }}
+                </p>
+                <center>
+                    <button class="text-center" href="{{ url('my_digital_environment_alerts_hub') }}">Search Alerts</button>
+                </center>
+            </columns>
+        </row>
+        <row>
+            <ul class="result-list">
+                {% for result in results %}
+                    {# @var result \MyDigitalEnvironment\AlertsBundle\Dto\Document #}
+                    <li class="document">
+                        <span class="site site-{{ result.platform.value }}">
+                            {{ result.platform | trans }} / {{ result.site }} :
+                        </span>
+                        <br>
+                        <strong>{{ result.type | capitalize }}</strong>
+                        {% if result.authors | length > 0 %}
+                            by :&nbsp;
+                            {% for author in result.authors %}
+                                <u>{{ author }}</u>{% if not loop.last %} - {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                        <br>
+                        <a href="{{ result.url }}">{{ result.title }}</a>
+                        {% if result.subtitle is not null %}
+                            <br><i>{{ result.subtitle }}</i>
+                        {% endif %}
+                    </li>
+                    {% if not loop.last %}
+                        <div class="separator"></div>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </row>
+    </container>
+{% endapply %}
+
+{# @var platform #}
+{% macro fullPlatform(platform) %}
+{% endmacro %}

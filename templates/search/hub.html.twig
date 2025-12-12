@@ -1,0 +1,109 @@
+{% extends '@MyDigitalEnvironmentAlerts/search/_base.html.twig' %}
+{% trans_default_domain 'my-de-alerts' %}
+
+{% block title %}My Digital Environment | {{ 'alerts.title'|trans }}{% endblock %}
+{% block navTitle %}{{ 'alerts.title'|trans }}{% endblock %}
+
+
+{% block javascripts %}
+    <script>
+        function setDeleteModalEvent(modal) {
+            modal.addEventListener('show.bs.modal', event => {
+                const link = event.relatedTarget;
+                modal.querySelector('#confirm-deletion').href = link.href;
+                modal.querySelector('#delete-search-name').innerHTML = link.getAttribute('data-bs-name');
+            })
+        }
+
+        function seekDeleteModal(loopIndex = 0) {
+            if (loopIndex >= 20) return;
+            let modal = document.getElementById('deleteAlertModal');
+            if (modal === null) {
+                setTimeout(seekDeleteModal, 25, ++loopIndex);
+            } else {
+                setDeleteModalEvent(modal)
+            }
+        }
+
+        seekDeleteModal()
+    </script>
+{% endblock %}
+
+{% block content %}
+    <a href="{{ path('my_digital_environment_alerts_new_search') }}" class="btn btn-primary mb-3" role="button">{{ 'alerts.new'|trans }}</a>
+    <p>{{ 'alerts.count'|trans({'alerts': searches|length})|raw }}</p>
+    {% for search in searches %}
+        {# sizing not great, would not work with mobile #}
+        <div class="list-group list-group-horizontal"> {# flex-fill #}
+            <a href="{{ path('my_digital_environment_alerts_delete_search', {'id': search.id}) }}"
+               class="list-group-item list-group-item-action w-auto text-danger flex-fill align-content-center"
+               data-bs-toggle="modal" data-bs-target="#deleteAlertModal" data-bs-name="{{ search.description }}"
+            >
+                {{ 'alerts.delete'|trans }}
+            </a>
+            <a href="{{ path('my_digital_environment_alerts_edit_search', {'id': search.id}) }}"
+               class="list-group-item list-group-item-action w-auto text-primary flex-fill align-content-center">{{ 'alerts.edit'|trans }}</a>
+            {{ _self.resultCount(search) }}
+            <div class="list-group-item align-content-center" style="width: 100%">
+                <span {% if search.name is not null %}title="{{ search.longDescription }}"{% endif %}>{{ search.description }}</span>
+                <br>
+                <span class="fw-light fst-italic text-secondary">
+                    {{ 'alerts.next_update_date'|trans({'dt': search.lastQueryDate|date_modify("+"~search.frequency.value~" day")}) }}
+                </span>
+            </div>
+        </div>
+    {% endfor %}
+
+    <!-- Modal -->
+    <div class="modal fade" id="deleteAlertModal" tabindex="-1" aria-labelledby="deleteAlertModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="deleteAlertModalLabel">
+                        {{ 'alerts.delete_modal.h1'|trans }}
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {{ 'alerts.delete_modal.ask'|trans|raw }}
+                    <br>
+                    <b id="delete-search-name" class="text-center d-block"></b>
+                    <br>
+                    {{ 'alerts.delete_modal.danger'|trans|raw }}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        {{ 'alerts.delete_modal.cancel'|trans }}
+                    </button>
+                    <a id="confirm-deletion" href="https://example.com" type="button" class="btn btn-danger">
+                        {{ 'alerts.delete_modal.delete'|trans }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{# @var search \MyDigitalEnvironment\AlertsBundle\Entity\Search #}
+{% macro resultCount(search) %}
+    {% if search.canSendEmail %}
+        <div class="list-group-item align-content-center text-center" style="color: gray; text-wrap: nowrap">
+            {{ 'alert.results.email'|trans|raw }}
+        </div>
+    {% elseif search.newResultCount <= 0 %}
+        <div class="list-group-item align-content-center text-center" style="color: gray; text-wrap: nowrap">
+            {{ 'alerts.results.none'|trans }}
+        </div>
+    {% else %}
+        <a href="{{ path('my_digital_environment_alerts_get_search_results', {'id': search.id}) }}" style="text-wrap: nowrap;"
+           class="list-group-item list-group-item-action w-auto flex-fill align-content-center text-success text-center fw-bold">
+            {% if search.moreResultThanCap %}
+                {{ 'alerts.results.more_than'|trans({'count': search.newResultCount})|raw }}
+            {% else %}
+                {{ 'alerts.results.count'|trans({'count': search.newResultCount})|raw }}
+            {% endif %}
+        </a>
+    {% endif %}
+{% endmacro %}

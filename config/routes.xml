@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing
+        https://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <!-- the controller value has the format 'controller_class::method_name' -->
+    <!-- if the action is implemented as the __invoke() method of the
+         controller class, you can skip the '::method_name' part:
+         controller="App\Controller\BlogController"/> -->
+
+    <route id="my_digital_environment_alerts_hub"
+           path="/"
+           controller="MyDigitalEnvironment\AlertsBundle\Controller\SearchController::hub"
+    />
+
+    <route id="my_digital_environment_alerts_new_search"
+           path="/new"
+           controller="MyDigitalEnvironment\AlertsBundle\Controller\SearchController::newSearch"
+    />
+
+    <route id="my_digital_environment_alerts_edit_search"
+           path="/edit/{id}"
+           controller="MyDigitalEnvironment\AlertsBundle\Controller\SearchController::editSearch"
+    />
+
+    <!-- Todo: swap id between my_digital_environment_alerts_search_results & my_digital_environment_alerts_preview_results -->
+    <route id="my_digital_environment_alerts_preview_search"
+           path="/preview"
+           controller="MyDigitalEnvironment\AlertsBundle\Controller\SearchController::previewResults"
+           methods="POST"
+    />
+
+    <!-- <route id="my_digital_environment_alerts_preview_results" --> <!-- Todo: Rework and remove remains of this method -->
+    <!--        path="/results/{id}" -->
+    <!--        controller="MyDigitalEnvironment\AlertsBundle\Controller\SearchController::previewResults" -->
+    <!--        methods="GET" -->
+    <!-- /> -->
+
+    <route id="my_digital_environment_alerts_get_search_results"
+           path="/results/{id}"
+           controller="MyDigitalEnvironment\AlertsBundle\Controller\SearchController::getSearchResults"
+           methods="GET"
+    />
+
+    <route id="my_digital_environment_alerts_save_search"
+           path="/save"
+           controller="MyDigitalEnvironment\AlertsBundle\Controller\SearchController::saveSearch"
+           methods="POST"
+    />
+
+    <route id="my_digital_environment_alerts_delete_search"
+           path="/delete/{id}"
+           controller="MyDigitalEnvironment\AlertsBundle\Controller\SearchController::deleteSearch"
+    />
+</routes>

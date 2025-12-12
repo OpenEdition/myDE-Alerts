@@ -1,0 +1,29 @@
+{% extends '@MyDigitalEnvironmentAlerts/search/_base.html.twig' %}
+{% trans_default_domain 'my-de-alerts' %}
+
+{# todo: change page title when editing an pre-existing alert #}
+{% block title %}My Digital Environment | {{ 'alerts.title'|trans }} | {{ 'alerts.title.new'|trans }}{% endblock %}
+{% block navTitle %}{{ 'alerts.title.new'|trans }}{% endblock %}
+
+{% block content %}
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    {{ form_row(form.name) }}
+    {{ form_row(form.query) }}
+    {{ form_row(form.platforms) }}
+    {{ form_row(form.fromPublication) }}
+    {{ form_row(form.untilPublication) }}
+    {{ form_row(form.frequency) }}
+    {{ form_row(form.sendEmail) }}
+    {# todo: find ways to change to what's shown ('MONTHLY' => 'every 28 days') and to radio form #}
+
+    <div class="d-flex gap-2">
+        {{ form_widget(form.save) }}
+        {{ form_widget(form.preview, {'attr': {'formaction': path('my_digital_environment_alerts_preview_search')}}) }}
+    </div>
+    {% do form.edit.setRendered() %}
+    {# todo : add delete button when search is saved in db (look at id?) #}
+    {{ form_rest(form) }}
+    {{ form_end(form) }}
+{% endblock %}

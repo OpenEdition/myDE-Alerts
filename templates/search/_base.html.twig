@@ -1,0 +1,15 @@
+{% extends '@MyDigitalEnvironment/base.html.twig' %}
+{% trans_default_domain 'my-de-alerts' %}
+
+{% block title %}My Digital Environment | {{ 'alerts.title'|trans }}{% endblock %}
+{% block navTitle %}{% endblock %}
+
+{# Todo : update how we define the path/navBrand extension here, should not be a long term solution #}
+{% block brandExpansion %}
+    <span class="me-1" style="margin-left: -.75rem !important;">/</span>
+    <a class="navbar-brand mb-0 h1"
+       style=" color: #d77600;"
+       href="{{ path('my_digital_environment_alerts_hub') }}">
+        {{ 'alerts.nav_title'|trans }}
+    </a>
+{% endblock %}

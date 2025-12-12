@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="OeMpe25" resname="alerts.title">
+        <source>alerts.title</source>
+        <target>Alerts</target>
+      </trans-unit>
+      <trans-unit id="vVjGR_L" resname="alerts.count">
+        <source>alerts.count</source>
+        <target><![CDATA[{alerts, plural,
+            =0 {No saved alerts.}
+            =1 {<b>1</b> saved alert.}
+            other {<b>#</b> saved alerts.}
+        }]]></target>
+      </trans-unit>
+      <trans-unit id="imk6tfo" resname="alerts.new">
+        <source>alerts.new</source>
+        <target>New alert</target>
+      </trans-unit>
+      <trans-unit id="7.O0goL" resname="alerts.delete">
+        <source>alerts.delete</source>
+        <target>Delete</target>
+      </trans-unit>
+      <trans-unit id="B1FSNqu" resname="alerts.edit">
+        <source>alerts.edit</source>
+        <target>Edit</target>
+      </trans-unit>
+      <trans-unit id="Tgk6PLX" resname="alert.results.email">
+        <source>alert.results.email</source>
+        <target><![CDATA[Sending results<br>via email]]></target>
+      </trans-unit>
+      <trans-unit id="MWyf76b" resname="alerts.results.none">
+        <source>alerts.results.none</source>
+        <target>No results</target>
+      </trans-unit>
+      <trans-unit id="X1NGqUQ" resname="alerts.results.more_than">
+        <source>alerts.results.more_than</source>
+        <target><![CDATA[More than {count}<br>new results]]></target>
+      </trans-unit>
+      <trans-unit id="Bs29SvH" resname="alerts.results.count">
+        <source>alerts.results.count</source>
+        <target><![CDATA[{count} new<br>results]]></target>
+      </trans-unit>
+      <trans-unit id="kjXDpzO" resname="alerts.delete_modal.h1">
+        <source>alerts.delete_modal.h1</source>
+        <target>Deleting an alert ?</target>
+      </trans-unit>
+      <trans-unit id="zFyjyZp" resname="alerts.delete_modal.ask">
+        <source>alerts.delete_modal.ask</source>
+        <target>Are you certain you wish to delete this alert:</target>
+      </trans-unit>
+      <trans-unit id="zdBq1wz" resname="alerts.delete_modal.danger">
+        <source>alerts.delete_modal.danger</source>
+        <target><![CDATA[There is no backtracking, <b>all</b>
+        data associated with this alert will be lost.]]></target>
+      </trans-unit>
+      <trans-unit id="zfDTgXr" resname="alerts.delete_modal.cancel">
+        <source>alerts.delete_modal.cancel</source>
+        <target>Cancel</target>
+      </trans-unit>
+      <trans-unit id="vg.PXdk" resname="alerts.delete_modal.delete">
+        <source>alerts.delete_modal.delete</source>
+        <target>Delete alert</target>
+      </trans-unit>
+      <trans-unit id="qpLLd8o" resname="alerts.nav_title">
+        <source>alerts.nav_title</source>
+        <target>My Alerts</target>
+      </trans-unit>
+      <trans-unit id="_GNJtWk" resname="alerts.form.name">
+        <source>alerts.form.name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="otCNP31" resname="alerts.form.name.placeholder">
+        <source>alerts.form.name.placeholder</source>
+        <target>Name for the alert</target>
+      </trans-unit>
+      <trans-unit id="SCCukYs" resname="alerts.form.all_fields">
+        <source>alerts.form.all_fields</source>
+        <target>In all fields</target>
+      </trans-unit>
+      <trans-unit id="X2bQKbc" resname="alerts.form.all_fields.placeholder">
+        <source>alerts.form.all_fields.placeholder</source>
+        <target>Expression or keyword</target>
+      </trans-unit>
+      <trans-unit id="LWYrsra" resname="platform.books">
+        <source>platform.books</source>
+        <target>OpenEdition BOOKS</target>
+      </trans-unit>
+      <trans-unit id="xy0Ur74" resname="platform.journals">
+        <source>platform.journals</source>
+        <target>OpenEdition JOURNALS</target>
+      </trans-unit>
+      <trans-unit id="qJF0pSA" resname="platform.hypotheses">
+        <source>platform.hypotheses</source>
+        <target>HYPOTHESES</target>
+      </trans-unit>
+      <trans-unit id="vL0aqmr" resname="platform.calenda">
+        <source>platform.calenda</source>
+        <target>CALENDA</target>
+      </trans-unit>
+      <trans-unit id="twH8cpt" resname="alerts.form.from_publication">
+        <source>alerts.form.from_publication</source>
+        <target>From this year of publication</target>
+      </trans-unit>
+      <trans-unit id="YckrA6H" resname="alerts.form.until_publication">
+        <source>alerts.form.until_publication</source>
+        <target>Until this year of publication</target>
+      </trans-unit>
+      <trans-unit id="ctO4CeD" resname="alerts.form.frequency">
+        <source>alerts.form.frequency</source>
+        <target>Update frequency</target>
+      </trans-unit>
+      <trans-unit id="7OsxyrR" resname="alerts.frequency.daily">
+        <source>alerts.frequency.daily</source>
+        <target>Everyday</target>
+      </trans-unit>
+      <trans-unit id="eCJC8vD" resname="alerts.frequency.weekly">
+        <source>alerts.frequency.weekly</source>
+        <target>Weekly</target>
+      </trans-unit>
+      <trans-unit id="3t_yMGT" resname="alerts.frequency.monthly">
+        <source>alerts.frequency.monthly</source>
+        <target>Every 28 days</target>
+      </trans-unit>
+      <trans-unit id="95pyanV" resname="alerts.form.email">
+        <source>alerts.form.email</source>
+        <target>Send email notifications</target>
+      </trans-unit>
+      <trans-unit id="TmGn788" resname="alerts.form.preview">
+        <source>alerts.form.preview</source>
+        <target>Preview</target>
+      </trans-unit>
+      <trans-unit id="Y6KvVly" resname="alerts.form.edit">
+        <source>alerts.form.edit</source>
+        <target>Edit</target>
+      </trans-unit>
+      <trans-unit id="0aAjRgQ" resname="alerts.form.save">
+        <source>alerts.form.save</source>
+        <target>Save</target>
+      </trans-unit>
+      <trans-unit id="pVd2Zwf" resname="alerts.title.new">
+        <source>alerts.title.new</source>
+        <target>New alert</target>
+      </trans-unit>
+      <trans-unit id="UaFqHR8" resname="alerts.form.platform">
+        <source>alerts.form.platform</source>
+        <target>Platforms</target>
+      </trans-unit>
+      <trans-unit id="_kOqWz9" resname="alerts.form.refresh">
+        <source>alerts.form.refresh</source>
+        <target>Refresh</target>
+      </trans-unit>
+      <trans-unit id="kVFm66q" resname="alerts.title.preview">
+        <source>alerts.title.preview</source>
+        <target>Preview</target>
+      </trans-unit>
+      <trans-unit id="6UVHBOd" resname="alerts.title.preview.long">
+        <source>alerts.title.preview.long</source>
+        <target>Preview for alert:</target>
+      </trans-unit>
+      <trans-unit id="g_6skip" resname="alerts.preview.paginator">
+        <source>alerts.preview.paginator</source>
+        <target><![CDATA[{total, plural,
+            =0 {No documents found}
+            other {<b>#</b> documents found, page <b>{currentPage, number}</b> out of <b>{pageCount, number}</b>}
+        }]]></target>
+      </trans-unit>
+      <trans-unit id=".qWWr2u" resname="alerts.title.results">
+        <source>alerts.title.results</source>
+        <target>Results</target>
+      </trans-unit>
+      <trans-unit id=".EUoyfT" resname="alerts.title.results.long">
+        <source>alerts.title.results.long</source>
+        <target>Results for alert:</target>
+      </trans-unit>
+      <trans-unit id="pdllMuh" resname="alerts.next_update_date">
+        <source>alerts.next_update_date</source>
+        <target>Next update: {dt, date, short}</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

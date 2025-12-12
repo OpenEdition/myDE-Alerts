@@ -1,0 +1,93 @@
+{
+    "name": "my-digital-environment/alerts",
+    "type": "symfony-bundle",
+    "authors": [
+        {
+            "name": "Arnaud Garing",
+            "email": "arnaud.garing@openedition.org",
+            "role": "Lead developer"
+        },{
+            "name": "Jean-Christophe Souplet",
+            "role": "Project manager"
+        },{
+            "name": "Roland Haroutiounian",
+            "role": "Senior developper"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/OpenEdition/myDE"
+        }
+    ],
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.3 || >=8.2",
+        "ext-ctype": "*",
+        "ext-iconv": "*",
+        "doctrine/doctrine-bundle": "^2.13",
+        "doctrine/doctrine-migrations-bundle": "^3.3",
+        "doctrine/orm": "^3.2",
+        "league/html-to-markdown": "*",
+        "my-digital-environment/my-digital-environment": "*",
+        "stof/doctrine-extensions-bundle": "^1.13",
+        "symfony/console": "7.3.*",
+        "symfony/dotenv": "7.3.*",
+        "symfony/flex": "^2",
+        "symfony/framework-bundle": "7.3.*",
+        "symfony/http-client": "7.3.*",
+        "symfony/mailer": "7.3.*",
+        "symfony/messenger": "7.3.*",
+        "symfony/runtime": "7.3.*",
+        "symfony/yaml": "7.3.*",
+        "symfonycasts/micro-mapper": "^0.2",
+        "twig/cssinliner-extra": "*",
+        "twig/extra-bundle": "*",
+        "twig/inky-extra": "*"
+    },
+    "require-dev": {
+        "symfony/debug-bundle": "7.3.*",
+        "symfony/maker-bundle": "^1.61"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true,
+            "symfony/flex": true,
+            "symfony/runtime": true
+        },
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "MyDigitalEnvironment\\AlertsBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MyDigitalEnvironment\\AlertsBundle\\\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        },
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ]
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "7.3.*"
+        }
+    }
+}
