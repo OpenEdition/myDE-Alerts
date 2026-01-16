@@ -215,11 +215,12 @@ readonly class SearchApiClient
                 // todo: find another way to check/ensure all went well when no result were returned
                 //  while $emailSent is useful, it does not work when an alert has no new result: no email is sent
                 // if ($emailSent) {
+                $document = $documents[0] ?? null;
                 $search
                     ->setNewResultCount($newResultCount)
                     ->setMoreResultThanCap(!$isAnchorFound)
-                    ->setUserAnchor($documents[0]->getUrl())
-                    ->setUpdateAnchor($documents[0]->getUrl())
+                    ->setUserAnchor($document?->getUrl())
+                    ->setUpdateAnchor($document?->getUrl())
                     ->setQueryCap($queryCap)
                     ->setLastQueryDate($date)
                 ;
