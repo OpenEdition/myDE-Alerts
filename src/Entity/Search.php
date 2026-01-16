@@ -411,7 +411,7 @@ class Search
         return $this->updateAnchor;
     }
 
-    public function setUpdateAnchor(string $updateAnchor): static
+    public function setUpdateAnchor(?string $updateAnchor): static
     {
         $this->updateAnchor = $updateAnchor;
 
