@@ -150,7 +150,7 @@ readonly class SearchApiClient
 
             $pageLimit = (10 * $search->getFrequency()->value) - 1;
             $page = 2;
-            while ((!$isAnchorFound) && ($noLimit || ($page < ($pageLimit + 2)))) {
+            while ($documents !== [] && (!$isAnchorFound) && ($noLimit || ($page < ($pageLimit + 2)))) {
                 $this->logger->notice("Update anchor not found, checking page n°$page");
                 $result = $this->queryForDocuments($search, SearchApiParametersDto::fromEntity($search, $page));
                 foreach ($result->documents as $document) {
