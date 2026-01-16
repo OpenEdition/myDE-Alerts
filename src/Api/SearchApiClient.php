@@ -135,6 +135,9 @@ readonly class SearchApiClient
             //    new documents when using the command
             //  By carefully changing how we change updateAnchor/userAnchor we could maybe simulate that behaviour
             //  Could implement a fake api endpoint for tests
+            if ($documents === []) {
+                $this->logger->notice("No result found for search #{$search->getId()} - \"{$search->getDescription()}\"");
+            }
             foreach ($documents as $document) {
                 if ($document->getUrl() === $anchor) {
                     $isAnchorFound = true;
