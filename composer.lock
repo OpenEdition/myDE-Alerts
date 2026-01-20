@@ -1463,16 +1463,16 @@
         },
         {
             "name": "my-digital-environment/my-digital-environment",
-            "version": "v0.2",
+            "version": "v0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/OpenEdition/myDE.git",
-                "reference": "6073c901182ae6b48239b163d396ee811bda8709"
+                "reference": "8b1990341ace8f0706696cb82e37673b4f3452ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/OpenEdition/myDE/zipball/6073c901182ae6b48239b163d396ee811bda8709",
-                "reference": "6073c901182ae6b48239b163d396ee811bda8709",
+                "url": "https://api.github.com/repos/OpenEdition/myDE/zipball/8b1990341ace8f0706696cb82e37673b4f3452ba",
+                "reference": "8b1990341ace8f0706696cb82e37673b4f3452ba",
                 "shasum": ""
             },
             "require": {
@@ -1557,10 +1557,10 @@
             ],
             "description": "Bundle that allow the quick setup of an ENT that can then be further extended",
             "support": {
-                "source": "https://github.com/OpenEdition/myDE/tree/v0.2",
+                "source": "https://github.com/OpenEdition/myDE/tree/v0.2.1",
                 "issues": "https://github.com/OpenEdition/myDE/issues"
             },
-            "time": "2025-12-12T14:16:45+00:00"
+            "time": "2026-01-16T12:53:19+00:00"
         },
         {
             "name": "psr/cache",
@@ -7362,5 +7362,5 @@
         "ext-iconv": "*"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
